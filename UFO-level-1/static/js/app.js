@@ -43,6 +43,21 @@ function runEnter(){
 
     // Test
     // console.log(inputValue);
+    
+    //if statement to allow refresh of table
+    if (inputValue == null || inputValue == "" ) {
+        tableData.forEach((sitingdata) => {
+            var tbody = d3.select("tbody");    
+            // Append one table row per student/grade
+            var row = tbody.append("tr");
+        
+            // append one cell for the student and one cell for the grade
+            Object.values(sitingdata).forEach((value) => {
+                row.append("td").text(value);
+            })
+        })
+        return false;
+    }
 
     // Create a custom filtering function
     function selectDate(dates) {
