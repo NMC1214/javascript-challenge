@@ -4,13 +4,13 @@ var tableData = data;
 //locate table body in html 
 var tbody = d3.select("tbody");
 
-// create table with data set
+// create table by going through each item in data set
 tableData.forEach((sitingdata) => {
 
-    // Append one table row per student/grade
+    // Append one table row per item in the data set
     var row = tbody.append("tr");
 
-    // append one cell for the student and one cell for the grade
+    // append one cell for the each of the elements per item in the data set
     Object.values(sitingdata).forEach((value) => {
         row.append("td").text(value);
     })
